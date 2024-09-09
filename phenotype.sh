@@ -5,7 +5,7 @@
 # ./outputs/preds \
 # --scale=1.0
 
-# Running without MPI multiprocessing
+# Running with python concurrent library
 python phenotype.py \
 ./outputs/preds \
 --scale=1.0
