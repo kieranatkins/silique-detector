@@ -6,6 +6,7 @@ from collections import defaultdict
 import sys
 import logging
 import pycocotools.mask as pct
+from concurrent.futures import ThreadPoolExecutor
 import os
 import numpy as np
 import argparse
@@ -14,9 +15,6 @@ import cv2
 
 from analysis import mask_analysis
 
-sys.path.append(os.getcwd())
-NUM_CPU = max(MPI.COMM_WORLD.Get_size() - 1, 1)
-# NUM_CPU=1
 
 logging.basicConfig(
     format='[%(asctime)s %(levelname)s] %(message)s',
@@ -89,9 +87,8 @@ def main(paths: List[str], scale: float):
 
     logger.info(f"Found {len(files)} files")
 
-    # with MPIPoolExecutor() as e:
-    #     dataframes = list(e.map(phenotype_file, files, [scale] * len(files), range(len(files))))
-    dataframes = list(tqdm(map(phenotype_file, files, [scale] * len(files), range(len(files))), total=len(files)))
+    with ThreadPoolExecutor() as e:
+        dataframes = list(e.map(phenotype_file, files, [scale] * len(files), range(len(files))))
 
     data = pd.concat([pd.DataFrame(d) for d in dataframes], ignore_index=True)
     data.to_csv(f'/home/a.kia5/herbdet/phenotype_out_{job_id}.csv')
