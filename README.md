@@ -7,7 +7,7 @@ Examples of visualisations (generating outputs to draw over image) and inference
 
 Requirements:
   - python3
-  - torch
+  - torch (A version compatible with mmdet and your hardware - GPU is recommended for large-scale phenotyping, but for testing CPU-only is possible - https://pytorch.org/get-started/locally/)
   - mmdet v3.3.0 (Earlier versions may work, at least v3.0, installation details found here - https://mmdetection.readthedocs.io/en/latest/get_started.html)
 
 All extra libraries can be installed using command ``pip install -r requirements.txt``, and are outlined below.
