@@ -24,3 +24,6 @@ Extra libaries:
   - scipy
   - sknw
   - networkx
+
+# License
+This project is released under the [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html) licence
