@@ -15,7 +15,6 @@ RUN pwd
 
 WORKDIR /app
 COPY . .
-WORKDIR /app/src
 
 CMD python test.py custom_configs/mask_rcnn/cascade_mask_rcnn_regnetx1.6_fpn_6x_at025_test.py ./arabidopsis.pth
 
