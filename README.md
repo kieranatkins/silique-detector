@@ -26,7 +26,7 @@ Extra libaries:
   - networkx
 
 # Reproducing results
-We provide a docker container to reproduce the testing results on the CPU, along with the test images and annotations in this repository for convenience (the full dataset is available at *LOCATION*). Takes approximately 30 minutes (inc. build time) on an Intel Ultra 7 165U. Note: The model weights file will must be downloaded and placed in this directory before building the container.
+We provide a docker container to reproduce the testing results on the CPU, along with the test images and annotations in this repository for convenience (the full dataset is available at DOI:10.20391/283ce324-6a96-4cc8-8168-51f48354f7cf). Takes approximately 30 minutes (inc. build time) on an Intel Ultra 7 165U. Note: The model weights file will must be downloaded and placed in this directory before building the container.
 
 Docker container is built with:
 ``docker build -t silique_detector .``
