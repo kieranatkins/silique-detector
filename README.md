@@ -26,7 +26,7 @@ Extra libaries:
   - networkx
 
 # Reproducing results
-We provide a docker container to reproduce the testing results, along with the test images and annotations in this repository for convenience (the full dataset is available at *LOCATION*). Note: The model weights file will need to be downloaded and placed in this directory to be able to run the generate the test results.
+We provide a docker container to reproduce the testing results on the CPU, along with the test images and annotations in this repository for convenience (the full dataset is available at *LOCATION*). Note: The model weights file will need to be downloaded and placed in this directory to be able to run the generate the test results.
 
 Docker container is built with:
 ``docker build -t silique_detector .``
