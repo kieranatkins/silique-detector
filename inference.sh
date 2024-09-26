@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export images=./test_images/*.png
+export images=./test_data/images/*.png
 export weight=./arabidopsis.pth
 
 # Generate outputs for phenotyping
