@@ -30,13 +30,7 @@ or
 ```
 docker run --v $(pwd):/data -shm-size=512m silique_detector visualize "./test_data/images/*.png"
 ```
-For inference (generating outputs) or visualizations (generating outputs and overlaying on images) respectively.
-
-Step 3:
-Outputs must be retrieved using the following command.
-```
-docker cp silique_detector:/app/out ./out/
-```
+For inference (generating outputs) or visualizations (generating outputs and overlaying on images) respectively. Outputs are placed in the current working directory, in folder named ``out``.
 
 Once outputs are generated, the script ``phenotype.sh`` can be used to generate pod morphology data. This uses the python ``concurrent`` library for multithreading. 
 
