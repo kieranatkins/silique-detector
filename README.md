@@ -38,7 +38,7 @@ Outputs must be retrieved using the following command.
 docker cp silique_detector:/app/out ./out/
 ```
 
-Once outputs are generated, in order to generate phenotype data the script ``phenotype.sh`` is used, which uses the python ``concurrent`` library for multithreading. 
+Once outputs are generated, the script ``phenotype.sh`` can be used to generate pod morphology data. This uses the python ``concurrent`` library for multithreading. 
 
 # Installing locally
 Running on Mac and Linux can be done using the terminal after installing python. For running on Windows we recommend using WSL Ubuntu (guide: https://learn.microsoft.com/en-us/windows/wsl/install).
