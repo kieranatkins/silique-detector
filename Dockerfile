@@ -1,8 +1,14 @@
 FROM python:3.11
 
+# Device can be either CPU or HW-enabled device like CUDA or ROCm. Default is to install CPU
+# In order to find HW-enabled device name visit "https://pytorch.org/get-started/locally/".
+# Typically, CUDA binaries will start with "cu" followed by version number without ".".
+# For example, CUDA version 11.8 will be "cu118".
+# ARG device="cpu" 
+ARG device="cu126"
 
 RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
-RUN python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu 
+RUN python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/"$device" 
 RUN python -m pip install openmim
 RUN python -m mim install mmengine
 RUN python -m mim install "mmcv==2.1"
@@ -16,6 +22,4 @@ RUN pwd
 WORKDIR /app
 COPY . .
 
-CMD python test.py custom_configs/mask_rcnn/cascade_mask_rcnn_regnetx1.6_fpn_6x_at025_test.py ./arabidopsis.pth
-
-
+ENTRYPOINT ["./run.sh"]

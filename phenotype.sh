@@ -7,7 +7,7 @@
 
 # Running with python concurrent library
 python phenotype.py \
-./outputs/preds \
+./out/preds \
 --scale=1.0
 
 
