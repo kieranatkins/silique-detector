@@ -16,7 +16,7 @@ Edit ``device`` parameter at top of the ``Dockerfile`` so ``device=cu121``. Curr
 
 
 Step 2:
-This docker container has three primary functions. The first ``test`` will rerun the Segmentation and Detection AP results of the test data in the file ``test_data``. This is the same test data in the main dataset, placed here for convenience. This is run with :
+This docker container has three primary functions. The first ``test`` will rerun the Segmentation and Detection AP results of the test data in the folder ``test_data``. This is the same test data in the main dataset, placed here for convenience. This is run with :
 
 ```
 docker run --shm-size=512m silique_detector test
