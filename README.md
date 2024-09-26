@@ -7,7 +7,7 @@ Model weights: https://www.dropbox.com/scl/fi/a4zfce27fee0fu21zn6em/arabidopsis.
 We provide a docker container to reproduce the test results, along with the test images and annotations in this repository for convenience (the full dataset is available at DOI:10.20391/283ce324-6a96-4cc8-8168-51f48354f7cf). testing takes approximately 30 minutes (inc. build time) on an Intel Ultra 7 165U. We also provide capability of generating outputs on novel data using the ``inference`` and ``visualize`` options. 
 
 Step 1:
-Download model weights ``arabidopsis.pth`` and place in directory. Once complete, docker container is built with (
+Download model weights ``arabidopsis.pth`` and place in directory. Once complete, docker container is built with
 ```
 docker build -t silique_detector .
 ```
