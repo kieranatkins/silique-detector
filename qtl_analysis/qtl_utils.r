@@ -1,7 +1,7 @@
 get_marker_names <- function(map, chr, pos){
     marker_names <- c()
 
-    # Terrible runtime
+    # Slow runtime
     for (i in seq_along(pos)){
         p <- pos[i]
         c <- toString(chr[i])
