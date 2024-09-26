@@ -7,16 +7,14 @@ Model weights: https://www.dropbox.com/scl/fi/a4zfce27fee0fu21zn6em/arabidopsis.
 We provide a docker container to reproduce the test results, along with the test images and annotations in this repository for convenience (the full dataset is available at DOI:10.20391/283ce324-6a96-4cc8-8168-51f48354f7cf). testing takes approximately 30 minutes (inc. build time) on an Intel Ultra 7 165U. We also provide capability of generating outputs on novel data using the ``inference`` and ``visualize`` options. 
 
 Step 1:
-Download model weights ``arabidopsis.pth`` and place in directory. Defaults to using CPU device.
-
-If using CUDA:
-Edit ``device`` parameter at top of the ``Dockerfile`` so ``device=cu121``. Currently only works with torch built with CUDA v12.1. For running on Ubuntu, install ``nvidia-container-toolkit`` and follow steps [here](https://stackoverflow.com/questions/59691207/docker-build-with-nvidia-runtime). Adding the flag ``--gpus all`` whenever running ``docker run`` lines to allow GPU passthrough.
-
-Once complete, docker container is built with (1561.8s on AMD Ryzen 5 2600)
-
+Download model weights ``arabidopsis.pth`` and place in directory. Once complete, docker container is built with (
 ```
 docker build -t silique_detector .
 ```
+If using CUDA:
+Edit ``device`` parameter at top of the ``Dockerfile`` so ``device=cu121``. Currently only works with torch built with CUDA v12.1. For running on Ubuntu, install ``nvidia-container-toolkit`` and follow steps [here](https://stackoverflow.com/questions/59691207/docker-build-with-nvidia-runtime). Adding the flag ``--gpus all`` whenever running ``docker run`` lines to allow GPU passthrough.
+
+
 Step 2:
 This docker container has three primary functions. The first ``test`` will rerun the Segmentation and Detection AP results of the test data in the file ``test_data``. This is the same test data in the main dataset, placed here for convenience. This is run with :
 
