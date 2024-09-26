@@ -1,6 +1,6 @@
 FROM python:3.11
 
-# Device can be either CPU or HW-enabled device like CUDA or ROCm. Default is to install CPU
+# Device can be either CPU or CUDA. Default is to install CPU
 # Currently, only non-cpu torch version support is CUDA 12.1.
 ARG device=cpu
 # ARG device=cu121

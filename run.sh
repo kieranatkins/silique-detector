@@ -5,7 +5,6 @@ weight=./arabidopsis.pth
 
 echo $1
 echo $2
-echo $3
 
 if [ "$1" = "test" ]; then
     python test.py "$cfg" "$weight"

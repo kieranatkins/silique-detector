@@ -21,16 +21,16 @@ This docker container has three primary functions. The first ``test`` will rerun
 ```
 docker run --shm-size=512m silique_detector test
 ```
-The docker container can also generate outputs and visualisations on novel data. Data must be placed within this directory before building. This can be run with either:
+The docker container can also generate outputs and visualisations on novel data. Data must be placed within this directory before building. This can be run using the ``inference`` option to generate outputs.
 
 ```
 docker run -v $(pwd):/data --shm-size=512m silique_detector inference "./test_data/images/*.png"
 ```
-or
+Or the ``visualize`` option to draw outputs over images.
 ```
 docker run --v $(pwd):/data -shm-size=512m silique_detector visualize "./test_data/images/*.png"
 ```
-For inference (generating outputs) or visualizations (generating outputs and overlaying on images) respectively. Outputs are placed in the current working directory, in folder named ``out``.
+Outputs are placed in the current working directory, in a folder named ``out``.
 
 Once outputs are generated, the script ``phenotype.sh`` can be used to generate pod morphology data. This uses the python ``concurrent`` library for multithreading. 
 
