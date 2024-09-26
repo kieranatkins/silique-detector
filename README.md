@@ -7,13 +7,18 @@ Model weights: https://www.dropbox.com/scl/fi/a4zfce27fee0fu21zn6em/arabidopsis.
 We provide a docker container to reproduce the testing results on the CPU, along with the test images and annotations in this repository for convenience (the full dataset is available at DOI:10.20391/283ce324-6a96-4cc8-8168-51f48354f7cf). Takes approximately 30 minutes (inc. build time) on an Intel Ultra 7 165U. 
 
 Step 1:
-Download model weights ``arabidopsis.pth`` and place in directory. Edit ``device`` parameter at top of the ``Dockerfile`` to select whether to build torch for CPU or CUDA. If CPU, leave default. If CUDA, go to [pytorch](https://pytorch.org/get-started/locally/) website, select your correct computer platform for Linux, pip and python. Take the last set of letters of the 'Run this command' line, and put them as the ``device`` parameter in the ``Dockerfile`` e.g. CUDA 11.8 = ``cu118``. Once complete, docker container is built with :
+Download model weights ``arabidopsis.pth`` and place in directory. Defaults to using CPU device.
+
+If using CUDA:
+Edit ``device`` parameter at top of the ``Dockerfile`` so ``device=cu121``. Currently only works with torch built with CUDA v12.1. For running on Ubuntu, install ``nvidia-container-toolkit`` and follow steps [here](https://stackoverflow.com/questions/59691207/docker-build-with-nvidia-runtime). Adding the flag ``--gpus all`` whenever running ``docker run`` lines to allow GPU passthrough.
+
+Once complete, docker container is built with (1561.8s on AMD Ryzen 5 2600)
 
 ```
 docker build -t silique_detector .
 ```
 Step 2:
-This docker container has three primary functions. The first ``test`` will rerun the Segmentation and Detection AP results of the test data in the file ``test_data``. This is the same test data in the main dataset, placed here for convenience. This is run with:
+This docker container has three primary functions. The first ``test`` will rerun the Segmentation and Detection AP results of the test data in the file ``test_data``. This is the same test data in the main dataset, placed here for convenience. This is run with :
 
 ```
 docker run --shm-size=512m silique_detector test
@@ -21,11 +26,11 @@ docker run --shm-size=512m silique_detector test
 The docker container can also generate outputs and visualisations on novel data. Data must be placed within this directory before building. This can be run with either:
 
 ```
-docker run --shm-size=512m silique_detector inference /path/to/data
+docker run --shm-size=512m silique_detector inference ./test_data/images/*.png
 ```
 or
 ```
-docker run --shm-size=512m silique_detector visualize /path/to/data
+docker run --shm-size=512m silique_detector visualize ./test_data/images/*.png
 ```
 For inference (generating outputs) or visualizations (generating outputs and overlaying on images) respectively.
 
@@ -58,6 +63,8 @@ Extra libaries:
   - sknw
   - networkx
 
+# QTL analysis
+The directory ``qtl_analysis`` contains the data and code used to perform the QTL analysis outlined in the paper, as well as generating figures.
 
 # License
-This project is released under the [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html) license
+This project is released under the [GNU GPL v3](https://choosealicense.com/licenses/gpl-3.0/) license

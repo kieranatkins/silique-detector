@@ -9,17 +9,19 @@ echo $3
 
 if [ "$1" = "test" ]; then
     python test.py "$cfg" "$weight"
+    exit
 fi
 
 if [ "$1" = "inference" ]; then
     images=$2
     python inference.py inference "$cfg" "$weight" "$images" "./out/"
-
+    exit
 fi
 
 if [ "$1" = "visualize" ]; then
     images=$2
     python inference.py visualize "$cfg" "$weight" "$images" "./out/"
-
+    exit
 fi
 
+echo Unrecognised command \"$1\", please select either test, inference for visualize

@@ -26,8 +26,8 @@ if __name__ == '__main__':
     out = sys.argv[5]
     files = glob(folder)
     print(f'{len(files)} files')
-    # inferencer = DetInferencer(model=config, weights=weights, device='cuda:0', show_progress=True)
-    inferencer = DetInferencer(model=config, weights=weights, show_progress=True)
+    inferencer = DetInferencer(model=config, weights=weights, device='cuda:0', show_progress=True)
+    # inferencer = DetInferencer(model=config, weights=weights, show_progress=True)
 
     if method == 'inference':
         inference_only(inferencer, files, out, 1)
