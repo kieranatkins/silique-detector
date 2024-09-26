@@ -12,7 +12,7 @@ Download model weights ``arabidopsis.pth`` and place in directory. Once complete
 docker build -t silique_detector .
 ```
 If using CUDA:
-Edit ``device`` parameter at top of the ``Dockerfile`` so ``device=cu121``. Currently only supports CUDA drivers compatible with toolkit v12.1. For running on Ubuntu, install ``nvidia-container-toolkit`` and follow steps [here](https://stackoverflow.com/questions/59691207/docker-build-with-nvidia-runtime). Adding the flag ``--gpus all`` whenever running ``docker run`` lines to allow GPU passthrough.
+Edit ``device`` parameter at top of the ``Dockerfile`` so ``device=cu121``. Currently only supports CUDA drivers compatible with toolkit v12.1. For running on Ubuntu, install ``nvidia-container-toolkit`` and follow steps [here](https://stackoverflow.com/questions/59691207/docker-build-with-nvidia-runtime). Adding the flag ``--gpus all`` whenever running ``docker run`` lines to allow GPU passthrough. Note: CUDA support is experimental and not fully tested.
 
 
 Step 2:
@@ -24,16 +24,16 @@ docker run --shm-size=512m silique_detector test
 The docker container can also generate outputs and visualisations on novel data. Data must be placed within this directory before building. This can be run with either:
 
 ```
-docker run --shm-size=512m silique_detector inference ./test_data/images/*.png
+docker run --shm-size=512m silique_detector inference "./test_data/images/*.png"
 ```
 or
 ```
-docker run --shm-size=512m silique_detector visualize ./test_data/images/*.png
+docker run --shm-size=512m silique_detector visualize "./test_data/images/*.png"
 ```
 For inference (generating outputs) or visualizations (generating outputs and overlaying on images) respectively.
 
 Step 3:
-Outputs of both of these must be retrieved using command:
+Outputs must be retrieved using the following command.
 ```
 docker cp silique_detector:/app/out ./out/
 ```
