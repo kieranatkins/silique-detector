@@ -12,7 +12,7 @@ Download model weights ``arabidopsis.pth`` and place in directory. Once complete
 docker build -t silique_detector .
 ```
 If using CUDA:
-Edit ``device`` parameter at top of the ``Dockerfile`` so ``device=cu121``. Currently only supports CUDA drivers compatible with toolkit v12.1. For running on Ubuntu, install ``nvidia-container-toolkit`` and follow steps [here](https://stackoverflow.com/questions/59691207/docker-build-with-nvidia-runtime). Adding the flag ``--gpus all`` whenever running ``docker run`` lines to allow GPU passthrough. Note: CUDA support is experimental and not fully tested and with default image size a GPU with >8GB of memory is required.
+Edit ``device`` parameter at top of the ``Dockerfile`` so ``device=cu121``. Currently only supports CUDA drivers compatible with toolkit v12.1. For running on Ubuntu, install ``nvidia-container-toolkit`` and follow steps [here](https://stackoverflow.com/questions/59691207/docker-build-with-nvidia-runtime). Adding the flag ``--gpus all`` whenever running ``docker run`` lines to allow GPU passthrough. Note: CUDA support is experimental and not fully tested, with default image size a GPU with >8GB of memory is required.
 
 
 Step 2:
