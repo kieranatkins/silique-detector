@@ -14,13 +14,13 @@ fi
 
 if [ "$1" = "inference" ]; then
     images=$2
-    python inference.py inference "$cfg" "$weight" "$images" "./out/"
+    python inference.py inference "$cfg" "$weight" "$images" "/data/out"
     exit
 fi
 
 if [ "$1" = "visualize" ]; then
     images=$2
-    python inference.py visualize "$cfg" "$weight" "$images" "./out/"
+    python inference.py visualize "$cfg" "$weight" "$images" "/data/out"
     exit
 fi
 

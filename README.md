@@ -24,11 +24,11 @@ docker run --shm-size=512m silique_detector test
 The docker container can also generate outputs and visualisations on novel data. Data must be placed within this directory before building. This can be run with either:
 
 ```
-docker run --shm-size=512m silique_detector inference "./test_data/images/*.png"
+docker run -v $(pwd):/data --shm-size=512m silique_detector inference "./test_data/images/*.png"
 ```
 or
 ```
-docker run --shm-size=512m silique_detector visualize "./test_data/images/*.png"
+docker run --v $(pwd):/data -shm-size=512m silique_detector visualize "./test_data/images/*.png"
 ```
 For inference (generating outputs) or visualizations (generating outputs and overlaying on images) respectively.
 
