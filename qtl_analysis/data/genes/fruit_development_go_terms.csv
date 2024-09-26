@@ -1,0 +1,29 @@
+,parent_go_id,child_go_id,child_name,distance,exclude
+1,GO:0010154,GO:0010154,fruit development,0,FALSE
+2,GO:0010154,GO:0009835,fruit ripening,1,TRUE
+3,GO:0010154,GO:0048316,seed development,1,TRUE
+4,GO:0010154,GO:0048530,fruit morphogenesis,1,FALSE
+5,GO:0010154,GO:0080127,fruit septum development,1,FALSE
+6,GO:0010154,GO:1990058,fruit replum development,1,FALSE
+7,GO:0010154,GO:1990059,fruit valve development,1,FALSE
+20,GO:0099402,GO:0099402,plant organ development,0,FALSE
+21,GO:0099402,GO:0010338,leaf formation,1,TRUE
+22,GO:0099402,GO:0048364,root development,1,TRUE
+23,GO:0099402,GO:0048437,floral organ development,1,TRUE
+24,GO:0099402,GO:0048481,plant ovule development,1,FALSE
+25,GO:0099402,GO:0048827,phyllome development,1,TRUE
+26,GO:0099402,GO:0090693,plant organ senescence,1,TRUE
+27,GO:0099402,GO:0090696,post-embryonic plant organ development,1,FALSE
+28,GO:0099402,GO:0090700,maintenance of plant organ identity,1,TRUE
+29,GO:0099402,GO:1905392,plant organ morphogenesis,1,FALSE
+31,GO:1905392,GO:0009965,leaf morphogenesis,1,TRUE
+32,GO:1905392,GO:0010015,root morphogenesis,1,TRUE
+33,GO:1905392,GO:0010433,bract morphogenesis,1,TRUE
+34,GO:1905392,GO:0048482,plant ovule morphogenesis,1,FALSE
+35,GO:1905392,GO:0090697,post-embryonic plant organ morphogenesis,1,FALSE
+36,GO:1905392,GO:0090706,specification of plant organ position,1,TRUE
+37,GO:1905392,GO:0090707,establishment of plant organ orientation,1,TRUE
+38,GO:1905392,GO:0090708,specification of plant organ axis polarity,1,TRUE
+39,GO:1905392,GO:1905421,regulation of plant organ morphogenesis,1,FALSE
+40,GO:1905392,GO:1905422,negative regulation of plant organ morphogenesis,1,FALSE
+41,GO:1905392,GO:1905423,positive regulation of plant organ morphogenesis,1,FALSE

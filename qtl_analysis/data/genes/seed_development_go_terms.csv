@@ -1,0 +1,13 @@
+,parent_go_id,child_go_id,child_name,distance,exclude,n
+8,GO:0048316,GO:0048316,seed development,0,FALSE,258
+9,GO:0048316,GO:0009793,embryo development ending in seed dormancy,1,TRUE,2624
+10,GO:0048316,GO:0009960,endosperm development,1,FALSE,105
+11,GO:0048316,GO:0010214,seed coat development,1,TRUE,114
+12,GO:0048316,GO:0010344,seed oilbody biogenesis,1,TRUE,64
+13,GO:0048316,GO:0010431,seed maturation,1,FALSE,93
+14,GO:0048316,GO:0048317,seed morphogenesis,1,FALSE,42
+15,GO:0048316,GO:0080001,mucilage extrusion from seed coat,1,TRUE,54
+16,GO:0048316,GO:0080050,regulation of seed development,1,FALSE,9
+17,GO:0048316,GO:0080112,seed growth,1,FALSE,12
+18,GO:0048316,GO:0090376,seed trichome differentiation,1,TRUE,0
+19,GO:0048316,GO:0140547,acquisition of seed longevity,1,TRUE,33
