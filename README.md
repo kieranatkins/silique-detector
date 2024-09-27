@@ -23,7 +23,7 @@ Step 2:
 This docker container has three primary functions. The first ``test`` will rerun the Segmentation and Detection AP results of the test data in the folder ``test_data``. This is the same test data in the main dataset, placed here for convenience.
 
 ```
-docker run --shm-size=512m silique_detector test
+docker run --shm-size=512m silique-detector test
 ```
 The docker container can also generate outputs and visualisations on novel data. Data must be placed within this directory before building. This can be run using the ``inference`` option to generate outputs.
 
