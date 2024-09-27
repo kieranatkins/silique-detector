@@ -38,6 +38,9 @@ Outputs are placed in the current working directory, in a folder named ``out``.
 
 Once outputs are generated, the script ``phenotype.sh`` can be used to generate pod morphology data. This uses the python ``concurrent`` library for multithreading. 
 
+# Pre-built docker image
+There is also a pre-built docker image available (here)[https://hub.docker.com/repository/docker/kieranatkins/silique-detector/general].
+
 # Installing locally
 Running on Mac and Linux can be done using the terminal after installing python. For running on Windows we recommend using WSL Ubuntu (guide: https://learn.microsoft.com/en-us/windows/wsl/install).
 
