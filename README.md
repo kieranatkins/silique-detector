@@ -36,7 +36,7 @@ docker run -v path/to/my_data:/data --shm-size=512m silique-detector visualize "
 ```
 These options can also be run on the test data included in the container. e.g.
 ```
-docker run -v $(pwd):/data --shm-size=512m silique-detector visualize "test_data/images/*.png"
+docker run -v $(pwd):/data --shm-size=512m silique-detector visualize "./test_data/images/*.png"
 ```
 Outputs are placed in the data directory, in a folder named ``out``. Once inference outputs are generated, the script ``phenotype.sh`` can be used to generate pod morphology data. This uses the python ``concurrent`` library for multithreading. 
 
