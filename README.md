@@ -64,7 +64,7 @@ Extra libaries:
 The ``inference.sh`` script can be used to generate model outputs, with the ``images`` variable controlling the images to be phenotyped ``weight`` the location of the ``arabidopsis.pth`` weight file and ``out`` controlling where outputs will be saved.
 
 # Generating phenotype data
-Once ``inference`` has been used to create model outputs, the script ``phenotype.sh`` then phenotypes the output and creates a ``.csv`` file. The ``data`` variable controls where the outputs created by inference are stored. The script uses the python ``concurrent`` library for multithreading.
+Once ``inference`` has been used to create model outputs, the script ``phenotype.sh`` then phenotypes the output and creates a ``.csv`` file. The ``data`` variable controls where the outputs created by inference are stored. The script uses the python ``concurrent`` library for multithreading. There is also an included ``--scale`` parameter to tell the script the scale of the image (in mm/pixel), the script then outputs the values in both their pixel units and in the correct mm, mm2 and mm3 units. The script outputs silique length, diameter, volume approximation and area.
 
 # QTL analysis
 The directory ``qtl_analysis`` contains the data and code used to perform the QTL analysis outlined in the paper, as well as generating figures.
