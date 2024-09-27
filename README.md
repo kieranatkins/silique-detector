@@ -20,7 +20,7 @@ docker pull kieranatkins/silique-detector
 Note the full image name with have to be provided when running. (i.e. ``docker run --shm-size=512m kieranatkins/silique-detector test``).
 
 **Step 2:**
-This docker container has three primary functions. ``test``, ``inference`` and ``visualize``. ``test`` will rerun the Segmentation and Detection AP results of the test data in the folder ``test_data``. This is the same test data in the main dataset, placed here for convenience.
+This docker container has three primary functions. ``test``, ``inference`` and ``visualize``. ``test`` will rerun the Segmentation and Detection AP results of the test data in the folder ``test_data``. This is the same test data in the main dataset, included in the image for convenience.
 
 ```
 docker run --shm-size=512m silique-detector test
