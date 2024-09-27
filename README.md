@@ -32,7 +32,7 @@ docker run -v path/to/my_data:/data --shm-size=512m silique-detector inference "
 ```
 Or the ``visualize`` option to draw outputs over images: e.g.
 ```
-docker run -v path/to/my_data:/data --shm-size=512m silique-detector inference "/data/images/*.png"
+docker run -v path/to/my_data:/data --shm-size=512m silique-detector visualize "/data/images/*.png"
 ```
 Outputs are placed in the data directory, in a folder named ``out``. Once inference outputs are generated, the script ``phenotype.sh`` can be used to generate pod morphology data. This uses the python ``concurrent`` library for multithreading. 
 
