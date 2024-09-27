@@ -1,7 +1,7 @@
 # MorphPod: Deep Learning Phenotyping of Arabidopsis Fruit Morphology
 Model weights, inference code and phenotyping code associated with the manuscript "Deep Learning Phenotyping of Arabidopsis Fruits with QTL Analysis Verification" by Atkins et al.
 
-Model weights: https://www.dropbox.com/scl/fi/a4zfce27fee0fu21zn6em/arabidopsis.pth?rlkey=dmaukww7kkrsql371oatef677&st=21y2r1qd&dl=0 (must be downloaded to run model)
+Model weights: https://www.dropbox.com/scl/fi/a4zfce27fee0fu21zn6em/arabidopsis.pth?rlkey=dmaukww7kkrsql371oatef677&st=21y2r1qd&dl=0
 
 # Using docker
 We provide a docker container to reproduce the test results, along with the test images and annotations in this repository for convenience (the full dataset is available at DOI:10.20391/283ce324-6a96-4cc8-8168-51f48354f7cf). testing takes approximately 30 minutes (inc. build time) on an Intel Ultra 7 165U. We also provide capability of generating outputs on novel data using the ``inference`` and ``visualize`` options. 
