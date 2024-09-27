@@ -34,6 +34,10 @@ Or the ``visualize`` option to draw outputs over images: e.g.
 ```
 docker run -v path/to/my_data:/data --shm-size=512m silique-detector visualize "/data/images/*.png"
 ```
+These options can also be run on the test data included in the container.
+```
+docker run -v ./test_data:/data --shm-size=512m silique-detector visualize "/data/images/*.png"
+```
 Outputs are placed in the data directory, in a folder named ``out``. Once inference outputs are generated, the script ``phenotype.sh`` can be used to generate pod morphology data. This uses the python ``concurrent`` library for multithreading. 
 
 We provide experimental CUDA support for the docker image (requires building the image): Edit ``device`` parameter at top of the ``Dockerfile`` so ``device=cu121``. Currently only supports CUDA drivers compatible with toolkit v12.1. For running on Ubuntu, install ``nvidia-container-toolkit`` and follow steps [here](https://stackoverflow.com/questions/59691207/docker-build-with-nvidia-runtime). Adding the flag ``--gpus all`` whenever running ``docker run`` lines to allow GPU passthrough.
