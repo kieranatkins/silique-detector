@@ -64,7 +64,7 @@ Extra libaries:
 The ``inference.sh`` script can be used to generate model outputs, with the ``images`` variable controlling the images to be phenotyped ``weight`` the location of the ``arabidopsis.pth`` weight file and ``out`` controlling where outputs will be saved.
 
 # Generating phenotype data
-Once ``inference`` has been used to create model outputs, the script ``phenotype.sh`` then phenotypes the data in a ``.csv`` file. The ``data`` variable controls where the outputs created by inference are stored. The script uses the python ``concurrent`` library for multithreading.
+Once ``inference`` has been used to create model outputs, the script ``phenotype.sh`` then phenotypes the output and creates a ``.csv`` file. The ``data`` variable controls where the outputs created by inference are stored. The script uses the python ``concurrent`` library for multithreading.
 
 # QTL analysis
 The directory ``qtl_analysis`` contains the data and code used to perform the QTL analysis outlined in the paper, as well as generating figures.
