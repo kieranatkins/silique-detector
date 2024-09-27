@@ -34,7 +34,7 @@ Or the ``visualize`` option to draw outputs over images: e.g.
 ```
 docker run -v path/to/my_data:/data --shm-size=512m silique-detector visualize "/data/images/*.png"
 ```
-These options can also be run on the test data included in the container.
+These options can also be run on the test data included in the container. e.g.
 ```
 docker run -v ./test_data:/data --shm-size=512m silique-detector visualize "/data/images/*.png"
 ```
