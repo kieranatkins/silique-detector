@@ -12,11 +12,12 @@ Download model weights ``arabidopsis.pth`` and place in directory. Once complete
 docker build -t silique-detector .
 ```
 OR
+
 We provide a pre-built docker [here](https://hub.docker.com/repository/docker/kieranatkins/silique-detector/general]). This can be pulled using:
 ```
 docker pull kieranatkins/silique-detector
 ```
-Note the full docker name with have to be provided when running. (i.e. ``docker run --shm-size=512m kieranatkins/silique-detector test``).
+Note the full image name with have to be provided when running. (i.e. ``docker run --shm-size=512m kieranatkins/silique-detector test``).
 
 Step 2:
 This docker container has three primary functions. The first ``test`` will rerun the Segmentation and Detection AP results of the test data in the folder ``test_data``. This is the same test data in the main dataset, placed here for convenience.
