@@ -13,7 +13,7 @@ docker build -t silique-detector .
 ```
 **OR**
 
-We provide a pre-built docker [here](https://hub.docker.com/repository/docker/kieranatkins/silique-detector/general]). This can be pulled using:
+We provide a pre-built docker image [here](https://hub.docker.com/repository/docker/kieranatkins/silique-detector/general]). This can be pulled using:
 ```
 docker pull kieranatkins/silique-detector
 ```
