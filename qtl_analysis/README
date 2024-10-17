@@ -1,0 +1,1 @@
+This folder contains the code and data associated with the QTL analysis. The script `XYZ.py` reads the TAIR9 dataset and list of gene ontologies of interest and filters them into a list of candidate genes, named `filtered genes` in `out`.
