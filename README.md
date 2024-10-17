@@ -1,4 +1,4 @@
-# Unlocking the Power of AI for Phenotyping Fruit Morphology in Arabidopsis
+# MorphPod: Deep learning phenotyping of Arabidopsis fruit morphology 
 Model weights, inference code and phenotyping code associated with the manuscript "Unlocking the Power of AI for Phenotyping Fruit Morphology in Arabidopsis" by Atkins et al.
 
 Model weights: https://www.dropbox.com/scl/fi/a4zfce27fee0fu21zn6em/arabidopsis.pth?rlkey=dmaukww7kkrsql371oatef677&st=21y2r1qd&dl=0
