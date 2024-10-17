@@ -1,5 +1,5 @@
 # QTL Analysis 
-This folder contains the code and data associated with the QTL analysis. The script `get_genes.py` reads the TAIR9 dataset and list of gene ontologies of interest and filters them into a list of candidate genes, named `filtered genes` in `out`.
+This folder contains the code and data associated with the QTL analysis. The script `get_genes.py` reads the TAIR9 dataset and list of gene ontologies of interest and filters them into a list of candidate genes, named `filtered_genes.csv` in `out`.
 
 `prepare_data.py` reads the outputs of the model and creates line-level metrics of the MAGIC arabidopsis population
 
