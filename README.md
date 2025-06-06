@@ -7,7 +7,7 @@ Model weights: https://www.dropbox.com/scl/fi/a4zfce27fee0fu21zn6em/arabidopsis.
 We provide a docker container to reproduce the test results, along with the test images and annotations in this repository for convenience.
 
 **Step 1:**
-Download model weights ``arabidopsis.pth`` and place in directory. Once complete, build docker container.
+Download this repository and model weights ``arabidopsis.pth``, then place ``arabidopsis.pth`` in the downloaded directory. Once complete, build docker container.
 ```
 docker build -t silique-detector .
 ```
@@ -17,22 +17,22 @@ We provide a pre-built docker image [here](https://hub.docker.com/repository/doc
 ```
 docker pull kieranatkins/silique-detector
 ```
-Note: The full image name with have to be provided when running the pre-built image. (i.e. ``docker run --shm-size=512m kieranatkins/silique-detector test``).
+Note: The full image name must be provided when running the pre-built image. (i.e. ``docker run --shm-size=512m kieranatkins/silique-detector test``).
 
 **Step 2:**
-This docker container has three primary functions. ``test``, ``inference`` and ``visualize``. ``test`` will rerun the Segmentation and Detection AP results of the test data in the folder ``test_data``. This is the same test data in the main dataset, included in the image for convenience.
+This docker container has three primary functions. ``test``, ``inference`` and ``visualize``. The ``test`` function re-runs the Detection and Segmentation AP tests on the data inside folder ``test_data`` from the associated manuscript, provided in the docker image for convenience. ``inference`` detects and segments siliques in the images of a given path, where the ``phenotype.sh`` script can then be used to generate pod morphological data. ``visualize`` detects and segments siliques in the images of a given path, but then draws those detections and segmentations over the images to visualize what the model has detected.
 
+To run ``test``:
 ```
 docker run --shm-size=512m silique-detector test
 ```
-
-To geneare outputs on images outside the container, use the ``inference`` option and mount your own data folder to the container using -v flag: e.g.
+To run ``inference`` your own data must be mounted to the docker container's ``/data`` directory using the -v flag (e.g. ``-v /path/to/my_data:/data``). Once your data has been mounted to the ``/data`` directory in the docker image, your data can be accessed by the software (e.g. ``"/data/*.png"`` if your images are .png images)  
 ```
-docker run -v path/to/my_data:/data --shm-size=512m silique-detector inference "/data/images/*.png"
+docker run -v /path/to/my_data:/data --shm-size=512m silique-detector inference "/data/*.png"
 ```
-Or the ``visualize`` option to draw outputs over images: e.g.
+The ``visualize`` function is similar to the ``inference`` function, the function name only needs changing: e.g.
 ```
-docker run -v path/to/my_data:/data --shm-size=512m silique-detector visualize "/data/images/*.png"
+docker run -v /path/to/my_data:/data --shm-size=512m silique-detector visualize "/data/*.png"
 ```
 These options can also be run on the test data included in the container. e.g.
 ```
