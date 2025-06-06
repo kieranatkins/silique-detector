@@ -7,17 +7,21 @@ Model weights: https://www.dropbox.com/scl/fi/a4zfce27fee0fu21zn6em/arabidopsis.
 We provide a docker container to reproduce the test results, along with the test images and annotations in this repository for convenience.
 
 **Step 1:**
-Download this repository and model weights ``arabidopsis.pth``, then place ``arabidopsis.pth`` in the downloaded directory. Once complete, build docker container.
-```
-docker build -t silique-detector .
-```
-**OR**
 
-We provide a pre-built docker image [here](https://hub.docker.com/repository/docker/kieranatkins/silique-detector/). This can be pulled using:
+Download the pre-built docker image [here](https://hub.docker.com/repository/docker/kieranatkins/silique-detector/). This can be pulled using:
 ```
 docker pull kieranatkins/silique-detector
 ```
-Note: The full image name must be provided when running the pre-built image. (i.e. ``docker run --shm-size=512m kieranatkins/silique-detector test``).
+Note: There is a ``beta`` branch of this image that contains model weights trained on more diverse samples. To use this beta branch, the name must be provided every time you run a docker command. (i.e. ``docker pull kieranatkins/silique-detector:beta`` and ``docker run --shm-size=512m kieranatkins/silique-detector:beta test``)
+
+**OR**
+
+To build the docker image locally, download this repository and model weights ``arabidopsis.pth``, then place ``arabidopsis.pth`` in the downloaded directory. Once complete, build docker container.
+```
+docker build -t silique-detector .
+```
+Note: The local image name must be provided when running the locally-built image. (i.e. ``docker run --shm-size=512m silique-detector test``).
+
 
 **Step 2:**
 This docker container has three primary functions. ``test``, ``inference`` and ``visualize``. 
@@ -27,19 +31,19 @@ This docker container has three primary functions. ``test``, ``inference`` and `
 
 To run ``test``:
 ```
-docker run --shm-size=512m silique-detector test
+docker run --shm-size=512m kieranatkins/silique-detector test
 ```
 To run ``inference`` your own data must be mounted to the docker container's ``/data`` directory using the -v flag (e.g. ``-v /path/to/my_data:/data``). Once your data has been mounted to the ``/data`` directory in the docker image, it can be accessed by the software (e.g. ``"/data/*.png"`` if your images are .png images)  
 ```
-docker run -v /path/to/my_data:/data --shm-size=512m silique-detector inference "/data/*.png"
+docker run -v /path/to/my_data:/data --shm-size=512m kieranatkins/silique-detector inference "/data/*.png"
 ```
 The ``visualize`` function is similar to the ``inference`` function, the function name only needs changing: e.g.
 ```
-docker run -v /path/to/my_data:/data --shm-size=512m silique-detector visualize "/data/*.png"
+docker run -v /path/to/my_data:/data --shm-size=512m kieranatkins/silique-detector visualize "/data/*.png"
 ```
 These options can also be run on the test data included in the container. e.g.
 ```
-docker run -v $(pwd):/data --shm-size=512m silique-detector visualize "./test_data/images/*.png"
+docker run -v $(pwd):/data --shm-size=512m kieranatkins/silique-detector visualize "./test_data/images/*.png"
 ```
 Outputs are placed in the data directory, in a folder named ``out``. Once inference outputs are generated, the script ``phenotype.sh`` can be used to generate pod morphology data. This uses the python ``concurrent`` library for multithreading. 
 
